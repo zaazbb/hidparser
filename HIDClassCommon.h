@@ -51,8 +51,8 @@
 #define _HID_CLASS_COMMON_H_
 
 	/* Includes: */
-		#include "../../Core/StdDescriptors.h"
-		#include "HIDParser.h"
+		//#include "../../Core/StdDescriptors.h"
+		//#include "HIDParser.h"
 
 	/* Enable C linkage for C++ Compilers: */
 		#if defined(__cplusplus)
@@ -600,21 +600,21 @@
 		 *
 		 *  \note Regardless of CPU architecture, these values should be stored as little endian.
 		 */
-		typedef struct
-		{
-			USB_Descriptor_Header_t Header; /**< Regular descriptor header containing the descriptor's type and length. */
+		// typedef struct
+		// {
+		// 	USB_Descriptor_Header_t Header; /**< Regular descriptor header containing the descriptor's type and length. */
 
-			uint16_t                HIDSpec; /**< BCD encoded version that the HID descriptor and device complies to.
-			                                  *
-			                                  *   \see \ref VERSION_BCD() utility macro.
-			                                  */
-			uint8_t                 CountryCode; /**< Country code of the localized device, or zero if universal. */
+		// 	uint16_t                HIDSpec; /**< BCD encoded version that the HID descriptor and device complies to.
+		// 	                                  *
+		// 	                                  *   \see \ref VERSION_BCD() utility macro.
+		// 	                                  */
+		// 	uint8_t                 CountryCode; /**< Country code of the localized device, or zero if universal. */
 
-			uint8_t                 TotalReportDescriptors; /**< Total number of HID report descriptors for the interface. */
+		// 	uint8_t                 TotalReportDescriptors; /**< Total number of HID report descriptors for the interface. */
 
-			uint8_t                 HIDReportType; /**< Type of HID report, set to \ref HID_DTYPE_Report. */
-			uint16_t                HIDReportLength; /**< Length of the associated HID report descriptor, in bytes. */
-		} ATTR_PACKED USB_HID_Descriptor_HID_t;
+		// 	uint8_t                 HIDReportType; /**< Type of HID report, set to \ref HID_DTYPE_Report. */
+		// 	uint16_t                HIDReportLength; /**< Length of the associated HID report descriptor, in bytes. */
+		// } ATTR_PACKED USB_HID_Descriptor_HID_t;
 
 		/** \brief HID class-specific HID Descriptor (USB-IF naming conventions).
 		 *
@@ -626,48 +626,48 @@
 		 *
 		 *  \note Regardless of CPU architecture, these values should be stored as little endian.
 		 */
-		typedef struct
-		{
-			uint8_t  bLength; /**< Size of the descriptor, in bytes. */
-			uint8_t  bDescriptorType; /**< Type of the descriptor, either a value in \ref USB_DescriptorTypes_t or a value
-			                           *   given by the specific class.
-			                           */
+		// typedef struct
+		// {
+		// 	uint8_t  bLength; /**< Size of the descriptor, in bytes. */
+		// 	uint8_t  bDescriptorType; /**< Type of the descriptor, either a value in \ref USB_DescriptorTypes_t or a value
+		// 	                           *   given by the specific class.
+		// 	                           */
 
-			uint16_t bcdHID; /**< BCD encoded version that the HID descriptor and device complies to.
-			                  *
-			                  *   \see \ref VERSION_BCD() utility macro.
-			                  */
-			uint8_t  bCountryCode; /**< Country code of the localized device, or zero if universal. */
+		// 	uint16_t bcdHID; /**< BCD encoded version that the HID descriptor and device complies to.
+		// 	                  *
+		// 	                  *   \see \ref VERSION_BCD() utility macro.
+		// 	                  */
+		// 	uint8_t  bCountryCode; /**< Country code of the localized device, or zero if universal. */
 
-			uint8_t  bNumDescriptors; /**< Total number of HID report descriptors for the interface. */
+		// 	uint8_t  bNumDescriptors; /**< Total number of HID report descriptors for the interface. */
 
-			uint8_t  bDescriptorType2; /**< Type of HID report, set to \ref HID_DTYPE_Report. */
-			uint16_t wDescriptorLength; /**< Length of the associated HID report descriptor, in bytes. */
-		} ATTR_PACKED USB_HID_StdDescriptor_HID_t;
+		// 	uint8_t  bDescriptorType2; /**< Type of HID report, set to \ref HID_DTYPE_Report. */
+		// 	uint16_t wDescriptorLength; /**< Length of the associated HID report descriptor, in bytes. */
+		// } ATTR_PACKED USB_HID_StdDescriptor_HID_t;
 
 		/** \brief Standard HID Boot Protocol Mouse Report.
 		 *
 		 *  Type define for a standard Boot Protocol Mouse report
 		 */
-		typedef struct
-		{
-			uint8_t Button; /**< Button mask for currently pressed buttons in the mouse. */
-			int8_t  X; /**< Current delta X movement of the mouse. */
-			int8_t  Y; /**< Current delta Y movement on the mouse. */
-		} ATTR_PACKED USB_MouseReport_Data_t;
+		// typedef struct
+		// {
+		// 	uint8_t Button; /**< Button mask for currently pressed buttons in the mouse. */
+		// 	int8_t  X; /**< Current delta X movement of the mouse. */
+		// 	int8_t  Y; /**< Current delta Y movement on the mouse. */
+		// } ATTR_PACKED USB_MouseReport_Data_t;
 
 		/** \brief Standard HID Boot Protocol Keyboard Report.
 		 *
 		 *  Type define for a standard Boot Protocol Keyboard report
 		 */
-		typedef struct
-		{
-			uint8_t Modifier; /**< Keyboard modifier byte, indicating pressed modifier keys (a combination of
-			                   *   \c HID_KEYBOARD_MODIFER_* masks).
-			                   */
-			uint8_t Reserved; /**< Reserved for OEM use, always set to 0. */
-			uint8_t KeyCode[6]; /**< Key codes of the currently pressed keys. */
-		} ATTR_PACKED USB_KeyboardReport_Data_t;
+		// typedef struct
+		// {
+		// 	uint8_t Modifier; /**< Keyboard modifier byte, indicating pressed modifier keys (a combination of
+		// 	                   *   \c HID_KEYBOARD_MODIFER_* masks).
+		// 	                   */
+		// 	uint8_t Reserved; /**< Reserved for OEM use, always set to 0. */
+		// 	uint8_t KeyCode[6]; /**< Key codes of the currently pressed keys. */
+		// } ATTR_PACKED USB_KeyboardReport_Data_t;
 
 		/** Type define for the data type used to store HID report descriptor elements. */
 		typedef uint8_t USB_Descriptor_HIDReport_Datatype_t;

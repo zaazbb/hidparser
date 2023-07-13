@@ -66,8 +66,20 @@
 #ifndef __HIDPARSER_H__
 #define __HIDPARSER_H__
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <string.h>
+
+#define ATTR_CONST
+#define ATTR_NON_NULL_PTR_ARG(n)
+#define __INCLUDE_FROM_HID_DRIVER
+#define CONCAT_EXPANDED(x, y) x ## y
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+
+
 	/* Includes: */
-		#include "../../../../Common/Common.h"
+		//#include "../../../../Common/Common.h"
 
 		#include "HIDReportData.h"
 		#include "HIDClassCommon.h"
@@ -116,7 +128,8 @@
 			 *  but this can be overridden by defining \c HID_MAX_REPORTITEMS to another value in the user project
 			 *  makefile, and passing the define to the compiler using the -D compiler switch.
 			 */
-			#define HID_MAX_REPORTITEMS           20
+			//#define HID_MAX_REPORTITEMS           20
+			#define HID_MAX_REPORTITEMS           200
 		#endif
 
 		#if !defined(HID_MAX_REPORT_IDS) || defined(__DOXYGEN__)
